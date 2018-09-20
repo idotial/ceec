@@ -6,13 +6,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/ppp', function(req, res, next) {
-  res.render('index', { title: 'ppp' });
+router.get('/in/:title', function(req, res, next) {
+  res.render('index', { title: req.params.title||"" });
 });
 
-router.get('/ttt', function(req, res, next) {
-  res.render('index', { title: 'ttt' });
-});
+// router.get('/ttt', function(req, res, next) {
+//   res.render('index', { title: 'ttt' });
+// });
 
 module.exports = router;
 // http://mp.weixin.qq.com/profile?src=3&timestamp=1537326619&ver=1&
