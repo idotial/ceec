@@ -1,4 +1,5 @@
 var express = require('express');
+var logger = require('./../config/BasisLog')
 var router = express.Router();
 
 /* GET home page. */
@@ -7,6 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/in/:title', function(req, res, next) {
+  // logger.info(req)
   res.render('index', { title: req.params.title||"" });
 });
 
