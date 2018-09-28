@@ -4,14 +4,24 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
-router.get('/in/:title', function(req, res, next) {
+router.get('/en', function(req, res, next) {
   // logger.info(req)
-  res.render('index', { title: req.params.title||"" });
+  res.render('indexEn');
+  next()
 });
-
+router.get('/problem', function(req, res, next) {
+  // logger.info(req)
+  res.render('problem');
+  next()
+});
+router.get('/problem/en', function(req, res, next) {
+  // logger.info(req)
+  res.render('problemEn');
+  next()
+});
 // router.get('/ttt', function(req, res, next) {
 //   res.render('index', { title: 'ttt' });
 // });
